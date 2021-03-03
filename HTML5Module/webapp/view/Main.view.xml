@@ -1,0 +1,58 @@
+<mvc:View controllerName="ns.HTML5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <GenericTile 
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="Create new user"
+                            subheader="User management" 
+                            press="goToNewUser">
+                            <TileContent 
+                                unit="SAP" 
+                                footer="System">
+                                <ImageContent src="sap-icon://home-share" />
+                            </TileContent>
+                        </GenericTile>
+
+                        <GenericTile 
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="List users"
+                            subheader="User management" 
+                            press="goToListUsers">
+                            <TileContent >
+                                <ImageContent src="sap-icon://home-share" />
+                            </TileContent>
+                        </GenericTile>
+
+                        <GenericTile 
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="Roles Management"
+                            subheader="List Roles" 
+                            press="goToListRoles">
+                            <TileContent>
+                                <ImageContent 
+                                src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/ProfileImage_LargeGenTile.png" />
+                            </TileContent>
+                        </GenericTile>
+
+                        <GenericTile 
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="User simulation"
+                            subheader="Simulate an user access" 
+                            press="goToSimulation">
+                            <TileContent>
+                                <ImageContent 
+                                src="https://www.xiting.us/wp-content/uploads/2019/08/xamp-icon.svg" />
+                            </TileContent>
+                        </GenericTile>
+
+                        <Image src="https://www.xiting.de/wp-content/uploads/2020/08/logo_xiting-central-workflows-1024x877.png" />
+
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

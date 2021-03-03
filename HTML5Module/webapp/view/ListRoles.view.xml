@@ -1,0 +1,42 @@
+<mvc:View 
+    controllerName="ns.HTML5Module.controller.ListRoles" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page 
+                    id="page" 
+                    title="List of roles"
+                    showNavButton="true" 
+                    navButtonPress="onNavBack"
+                    showHeader="true"
+                >
+                	<List
+                        id="RolesList"
+                        headerText="Roles"
+                        items="{/}"
+                    >
+                        <items>
+                            <StandardListItem
+                                type="Navigation"
+                                title="{role_name}"
+                                description="{functions}"
+                                icon=""
+                                iconDensityAware="false"
+                                iconInset="false"
+                                adaptTitleSize="false" 
+                                press="goToDetailsRole"
+                            />
+                        </items>
+                    </List> 
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

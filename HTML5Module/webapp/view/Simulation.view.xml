@@ -1,0 +1,158 @@
+<mvc:View 
+    controllerName="ns.HTML5Module.controller.Simulation" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+>
+<NavContainer id="wizardNavContainer">
+	<!-- <Shell id="shell">
+		<App id="app"> -->
+			<pages>
+				<Page 
+                    id="wizardContentPage" 
+                    title="Simulation"
+                    showNavButton="true" 
+                    navButtonPress="onNavBack"
+                    showHeader="true"
+                >
+                   	<VBox class="sapUiSmallMargin">
+                       <Wizard 
+                            id="CreateProductWizard" 
+                            class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                            complete="wizardCompletedHandler"
+                        >
+                            <WizardStep id="UserStep" title="User choice" validated="true" >
+                                <f:SimpleForm 
+                                    id="formStep1"
+                                    editable="true"
+                                    layout="ResponsiveGridLayout"
+                                    title="User Data"
+                                    singleContainerFullSize="false" 
+                                >
+                                    <f:content>
+                                        <Label text="User" />
+                                            <Select
+                                                id="userSelect"
+                                                forceSelection="false"
+                                                selectedKey="rbrehmer"
+                                                items="{
+                                                    path: 'oModelUsers>/',
+                                                    sorter: { path: 'user_name' }
+                                                }"
+                                            >
+                                                <core:Item key="{oModelUsers>user_name}" text="{oModelUsers>user_name}" />
+                                            </Select>
+                                    </f:content>
+                                </f:SimpleForm>
+                            </WizardStep>
+
+                            <WizardStep id="RoleStep" title="Role" validated="true" >
+                                 <f:SimpleForm 
+                                    id="fomrStep2"
+                                    editable="true"
+                                    layout="ResponsiveGridLayout"
+                                    title="Roles"
+                                    singleContainerFullSize="false" 
+                                >
+                                    <f:content>
+                                        <Label text="Role" />
+                                        <Select
+                                            id="roleSelect"
+                                            forceSelection="false"
+                                            selectedKey="zrole_01"
+                                            items="{
+                                                path: 'oModelRoles>/',
+                                                sorter: { path: 'role_name' }
+                                            }"
+                                        >
+                                            <core:Item key="{oModelRoles>role_name}" text="{oModelRoles>role_name}" />
+                                        </Select>
+                                    </f:content>
+                                </f:SimpleForm>
+                            </WizardStep>
+                            
+                            <WizardStep id="SystemStep" title="System" validated="true" >
+                                <f:SimpleForm 
+                                    id="fomrStep3"
+                                    editable="true"
+                                    layout="ResponsiveGridLayout"
+                                    title="Systems"
+                                    singleContainerFullSize="false" 
+                                >
+                                    <f:content>
+                                        <Label text="System" />
+                                        <Select id="systemSelect" width="200px">
+                                            <items>
+                                                <core:Item text="DE2" key="DE2"/>
+                                                <core:Item text="QA2" key="QA2"/>
+                                                <core:Item text="P02" key="P02"/>
+                                            </items>
+                                        </Select>
+                                    </f:content>
+                                </f:SimpleForm>
+                            </WizardStep>
+                        </Wizard>
+                    </VBox>         
+				</Page>
+                <Page 
+                    id="wizardReviewPage" 
+                    title="Simulation"
+                    showNavButton="true" 
+                    navButtonPress="onNavBackSimulation"
+                    showHeader="true"
+                >
+					<content>
+						<f:SimpleForm
+								title="1. User"
+								minWidth="1024"
+								editable="false"
+								layout="ResponsiveGridLayout">
+							<f:content>
+								<Label text="Type"/>
+								<Text id="userSelected" text=""/>
+								<Link press="editStepOne" text="Edit" />
+							</f:content>
+						</f:SimpleForm>
+
+						<f:SimpleForm
+								title="2. Role"
+								minWidth="1024"
+								editable="false"
+								layout="ResponsiveGridLayout">
+							<f:content>
+								<Label text="Role"/>
+								<Text id="roleSelected" text=""/>
+								<Link press="editStepTwo" text="Edit" /> 
+							</f:content>
+						</f:SimpleForm>
+
+						<f:SimpleForm
+								title="3. System"
+								minWidth="1024"
+								editable="false"
+								layout="ResponsiveGridLayout">
+							<f:content>
+								<Label text="System:"/>
+								<Text id="systemSelected" text="{/manufacturingDate}"/>
+								<Link press="editStepThree" text="Edit" />
+							</f:content>
+						</f:SimpleForm>
+
+					</content>
+					<footer>
+						<Bar>
+							<contentRight>
+								<Button text="Submit" press="handleWizardSubmit"/>
+								<Button text="Cancel" press="onNavBackSimulation"/>
+							</contentRight>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		<!-- </App>
+	</Shell> -->
+</NavContainer>
+</mvc:View>

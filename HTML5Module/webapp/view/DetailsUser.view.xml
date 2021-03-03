@@ -1,0 +1,79 @@
+<mvc:View 
+    controllerName="ns.HTML5Module.controller.DetailsUser" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page 
+                    id="page" 
+                    title="User details"
+                    showNavButton="true" 
+                    navButtonPress="onNavBack"
+                    showHeader="true"
+                >
+                   	<VBox class="sapUiSmallMargin">
+                        <f:SimpleForm 
+                            id="SimpleFormChange354"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="User Data"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false" >
+                            <f:content>
+                                <Label text="User" />
+                                <Input id="user_name" value="{/user_name}" />
+                                
+                                <Label text="Name" />
+                                <Input id="name" value="{/name}" />
+                                
+                                <Label text="Role" />
+                                <Select
+                                    id="role"
+                                    forceSelection="false"
+                                    selectedKey="{oModelRoleUser>/id_role}"
+                                    items="{
+                                        path: 'oModelRoles>/',
+                                        sorter: { path: 'role_name' }
+                                    }">
+                                    <core:Item key="{oModelRoles>id}" text="{oModelRoles>role_name}" />
+                                </Select>
+                            </f:content>
+                        </f:SimpleForm>
+                    </VBox>
+                    <footer>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button 
+                                type="Reject" 
+                                text="Delete" 
+                                press=".onApproveDialogPress" 
+                            />
+                            <Button 
+                                type="Accept" 
+                                text="Save" 
+                                press="saveUser" 
+                            />
+                        </Toolbar>
+                    </footer>             
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
